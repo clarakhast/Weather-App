@@ -5,7 +5,11 @@ dropDownList.addEventListener(`change`, function(){
 
     fetch(endPoint)
     .then(function(res){
-
+        //This plucks the json out of the response
+        res.json()
+        .then(function(data){
+            alert(`The current temperature in ${dropDownList.value} is ${data.current.temperature}`);
+        })
     })
 
 
