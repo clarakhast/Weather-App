@@ -8,7 +8,8 @@ dropDownList.addEventListener(`change`, function(){
         //This plucks the json out of the response
         res.json()
         .then(function(data){
-            alert(`The current temperature in ${dropDownList.value} is ${data.current.temperature}`);
+            let div = document.getElementById(`container`);
+            div.innerHTML = `The current temperature in ${dropDownList.value} is ${data.current.temperature}`;
         })
     })
 
